@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Light.otf">
+            <string>SFUIDisplay-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandableCell" rowHeight="116" id="X13-W3-mzV" customClass="ExpandableCellCell" customModule="CustomExpandableCell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="116"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X13-W3-mzV" id="0E9-wZ-z0c">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="115.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-Ko-uhB" customClass="CardView" customModule="CustomExpandableCell" customModuleProvider="target">
+                        <rect key="frame" x="14" y="10" width="453" height="100"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-xL-LCp" userLabel="CardViewBound" customClass="ExpandableCellCell" customModule="CustomExpandableCell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="453" height="100"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-qP-CGa">
+                                        <rect key="frame" x="445" y="0.0" width="8" height="100"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.80000000000000004" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="n9u-su-NOR"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeU-a9-KAx">
+                                        <rect key="frame" x="0.0" y="0.0" width="8" height="100"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.80000000000000004" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="ddd-wo-oRF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CeU-a9-KAx" firstAttribute="top" secondItem="8QG-xL-LCp" secondAttribute="top" id="CQ4-sg-UNr"/>
+                                    <constraint firstItem="eXe-qP-CGa" firstAttribute="top" secondItem="8QG-xL-LCp" secondAttribute="top" id="Icy-Yb-OMh"/>
+                                    <constraint firstAttribute="trailing" secondItem="eXe-qP-CGa" secondAttribute="trailing" id="any-mq-eji"/>
+                                    <constraint firstItem="CeU-a9-KAx" firstAttribute="leading" secondItem="8QG-xL-LCp" secondAttribute="leading" id="dMq-t1-7qG"/>
+                                    <constraint firstAttribute="bottom" secondItem="CeU-a9-KAx" secondAttribute="bottom" id="fb9-xO-lfP"/>
+                                    <constraint firstAttribute="bottom" secondItem="eXe-qP-CGa" secondAttribute="bottom" id="yyq-Rz-PFp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6x-gc-5Zj">
+                                <rect key="frame" x="22" y="14" width="36.5" height="20"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some additional details about ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6T-37-Irc">
+                                <rect key="frame" x="22" y="35" width="188" height="16"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of open alarms: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cL-cY-hz1">
+                                <rect key="frame" x="22" y="58" width="116" height="14"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="12"/>
+                                <color key="textColor" red="0.59993284940719604" green="0.60003870725631714" blue="0.5999261736869812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time of last alarm:" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fh-Iu-4kE">
+                                <rect key="frame" x="332" y="58" width="99" height="14"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="12"/>
+                                <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:23:42 GMT" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-KV-J92">
+                                <rect key="frame" x="354.5" y="72" width="76.5" height="14"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="12"/>
+                                <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some other info : True" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jf-4G-FFJ">
+                                <rect key="frame" x="22" y="72" width="118.5" height="14"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="12"/>
+                                <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ec9-KV-J92" firstAttribute="trailing" secondItem="4fh-Iu-4kE" secondAttribute="trailing" id="287-XE-Bru"/>
+                            <constraint firstItem="4Jf-4G-FFJ" firstAttribute="top" secondItem="4cL-cY-hz1" secondAttribute="bottom" id="3KM-tj-R4i"/>
+                            <constraint firstAttribute="bottom" secondItem="8QG-xL-LCp" secondAttribute="bottom" id="4Pu-M3-pjc"/>
+                            <constraint firstItem="Y6T-37-Irc" firstAttribute="top" secondItem="Y6x-gc-5Zj" secondAttribute="bottom" constant="1" id="GFD-Io-cmg"/>
+                            <constraint firstItem="Y6T-37-Irc" firstAttribute="leading" secondItem="Y6x-gc-5Zj" secondAttribute="leading" id="J31-YW-5jR"/>
+                            <constraint firstItem="Y6x-gc-5Zj" firstAttribute="leading" secondItem="AcM-Ko-uhB" secondAttribute="leading" constant="22" id="PVn-J7-Q7j"/>
+                            <constraint firstItem="8QG-xL-LCp" firstAttribute="top" secondItem="AcM-Ko-uhB" secondAttribute="top" id="SN1-98-bnW"/>
+                            <constraint firstItem="4cL-cY-hz1" firstAttribute="leading" secondItem="Y6x-gc-5Zj" secondAttribute="leading" id="WTp-Hw-qfW"/>
+                            <constraint firstAttribute="trailing" secondItem="8QG-xL-LCp" secondAttribute="trailing" id="gHm-Z5-rcJ"/>
+                            <constraint firstItem="4Jf-4G-FFJ" firstAttribute="leading" secondItem="Y6x-gc-5Zj" secondAttribute="leading" id="hzM-T2-etn"/>
+                            <constraint firstAttribute="height" constant="100" id="kb3-hI-a4G"/>
+                            <constraint firstAttribute="bottom" secondItem="ec9-KV-J92" secondAttribute="bottom" constant="14" id="m5c-ZS-3P0"/>
+                            <constraint firstItem="Y6x-gc-5Zj" firstAttribute="top" secondItem="AcM-Ko-uhB" secondAttribute="top" constant="14" id="mtg-s7-7WL"/>
+                            <constraint firstAttribute="bottom" secondItem="4Jf-4G-FFJ" secondAttribute="bottom" constant="14" id="sa6-cJ-fnV"/>
+                            <constraint firstItem="ec9-KV-J92" firstAttribute="top" secondItem="4fh-Iu-4kE" secondAttribute="bottom" id="shB-b4-Eva"/>
+                            <constraint firstItem="8QG-xL-LCp" firstAttribute="leading" secondItem="AcM-Ko-uhB" secondAttribute="leading" id="vYY-Xx-DEm"/>
+                            <constraint firstAttribute="trailing" secondItem="4fh-Iu-4kE" secondAttribute="trailing" constant="22" id="y4i-80-AWE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.93725490196078431" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="AcM-Ko-uhB" secondAttribute="bottom" constant="5" id="5Ai-kq-0kH"/>
+                    <constraint firstAttribute="trailing" secondItem="AcM-Ko-uhB" secondAttribute="trailing" constant="14" id="5dj-Kh-b7r"/>
+                    <constraint firstItem="AcM-Ko-uhB" firstAttribute="leading" secondItem="0E9-wZ-z0c" secondAttribute="leading" constant="14" id="Jpt-1n-vwO"/>
+                    <constraint firstItem="AcM-Ko-uhB" firstAttribute="top" secondItem="0E9-wZ-z0c" secondAttribute="top" constant="10" id="tNT-4e-gnE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92527258400000001" green="0.92941254380000005" blue="0.93342864510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="alarmGroupAlarmInfoLbl" destination="4Jf-4G-FFJ" id="fcr-zU-lNY"/>
+                <outlet property="alarmGroupAlarmNoLbl" destination="4cL-cY-hz1" id="j3r-HL-TA9"/>
+                <outlet property="alarmGroupLastTimeLbl" destination="4fh-Iu-4kE" id="xXd-Jd-tsQ"/>
+                <outlet property="alarmGroupNameLbl" destination="Y6x-gc-5Zj" id="d8S-pU-ILt"/>
+                <outlet property="alarmGroupSubLbl" destination="Y6T-37-Irc" id="FEk-eh-3sW"/>
+                <outlet property="alarmGroupTimeLbl" destination="ec9-KV-J92" id="gSe-vi-VX9"/>
+                <outlet property="cardViewBound" destination="8QG-xL-LCp" id="Adi-L5-D0X"/>
+                <outlet property="cardViewUIView" destination="AcM-Ko-uhB" id="t8h-D8-HF5"/>
+                <outlet property="leftStatusStripeUiView" destination="CeU-a9-KAx" id="bMQ-GF-D0G"/>
+                <outlet property="rightStatusStripeUiView" destination="eXe-qP-CGa" id="kqm-7Z-kmd"/>
+            </connections>
+            <point key="canvasLocation" x="-415.5" y="-242"/>
+        </tableViewCell>
+    </objects>
+</document>
