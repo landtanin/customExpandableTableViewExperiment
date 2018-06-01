@@ -39,7 +39,6 @@
 		F3F05BBA20C1813E000A1DCF /* GetAlarmsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F05BB520C1813E000A1DCF /* GetAlarmsResponseModel.swift */; };
 		F3F05BBC20C1819C000A1DCF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F05BBB20C1819C000A1DCF /* Utils.swift */; };
 		F3F05BBE20C181B3000A1DCF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F05BBD20C181B3000A1DCF /* Constants.swift */; };
-		F3F05BC020C18648000A1DCF /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F05BBF20C18648000A1DCF /* CustomHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +78,6 @@
 		F3F05BB520C1813E000A1DCF /* GetAlarmsResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAlarmsResponseModel.swift; sourceTree = "<group>"; };
 		F3F05BBB20C1819C000A1DCF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F3F05BBD20C181B3000A1DCF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F3F05BBF20C18648000A1DCF /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +187,6 @@
 				F3F05B9920C17C9B000A1DCF /* UIDevice.swift */,
 				F3F05B9720C17C9B000A1DCF /* UIImage.swift */,
 				F3F05B9620C17C9B000A1DCF /* UINavigationItem.swift */,
-				F3F05BBF20C18648000A1DCF /* CustomHeader.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 				F3F05B8420C177A5000A1DCF /* expandedTableViewCell.swift in Sources */,
 				F3F05BB920C1813E000A1DCF /* StubGroupAlarmModel.swift in Sources */,
 				F3F05BAE20C1810A000A1DCF /* HomeMainCellRepresentable.swift in Sources */,
-				F3F05BC020C18648000A1DCF /* CustomHeader.swift in Sources */,
 				F3F05BB820C1813E000A1DCF /* StubAlarmModel.swift in Sources */,
 				F3F05BA920C18105000A1DCF /* AlarmsGroupStatsVM.swift in Sources */,
 				F3F05B7320C161FC000A1DCF /* ExpandableViewController.swift in Sources */,

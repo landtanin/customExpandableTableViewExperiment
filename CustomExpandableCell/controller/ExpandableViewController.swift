@@ -55,6 +55,7 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
 //        let headerView: UIView!
@@ -89,8 +90,49 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         let tapgesture = UITapGestureRecognizer(target: self , action: #selector(self.sectionTapped(_:)))
         headerView.addGestureRecognizer(tapgesture)
         
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+//        leftSwipe.setValue(section, forKey: "sectionKey")
+//        rightSwipe.setValue(section, forKey: "sectionKey")
+        
+//        leftSwipe.setValue(section, forKeyPath: "sectionKey")
+//        rightSwipe.setValue(section, forKeyPath: "sectionKey")
+        
+        leftSwipe.setValue(section, forUndefinedKey: "sectionKey")
+        rightSwipe.setValue(section, forUndefinedKey: "sectionKey")
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        
+        headerView.addGestureRecognizer(leftSwipe)
+        headerView.addGestureRecognizer(rightSwipe)
+        
         return headerView
 
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        
+        let headerCell = expandTable.headerView(forSection: sender.value(forKey: "sectionKey") as! Int)!
+        
+        if (sender.direction == .left) {
+            print("Swipe Left")
+            let labelPosition = CGPoint(x: headerCell.frame.origin.x - 150.0, y: headerCell.frame.origin.y)
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+                headerCell.frame = CGRect(x: labelPosition.x, y: labelPosition.y, width: headerCell.frame.size.width, height: headerCell.frame.size.height)
+            }, completion: nil)
+            
+        }
+        
+        if (sender.direction == .right) {
+            print("Swipe Right")
+            let labelPosition = CGPoint(x: headerCell.frame.origin.x + 150.0, y: headerCell.frame.origin.y)
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+                headerCell.frame = CGRect(x: labelPosition.x, y: labelPosition.y, width: headerCell.frame.size.width, height: headerCell.frame.size.height)
+            }, completion: nil)
+           
+        }
     }
     
     @objc func sectionTapped(_ sender: UITapGestureRecognizer){
