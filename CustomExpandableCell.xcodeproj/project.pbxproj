@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A5F478DE2D73C6FAD538F30 /* Pods_CustomExpandableCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86644347DBAF973CEA4C72F1 /* Pods_CustomExpandableCell.framework */; };
 		F3BEB2F120C57DAA00951AA4 /* CustomUISwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEB2F020C57DAA00951AA4 /* CustomUISwipeGestureRecognizer.swift */; };
+		F3BEB2F320C58DC000951AA4 /* MuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEB2F220C58DC000951AA4 /* MuteButton.swift */; };
 		F3F05B7120C161FC000A1DCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F05B7020C161FC000A1DCF /* AppDelegate.swift */; };
 		F3F05B7320C161FC000A1DCF /* ExpandableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F05B7220C161FC000A1DCF /* ExpandableViewController.swift */; };
 		F3F05B7620C161FC000A1DCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F05B7420C161FC000A1DCF /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		86644347DBAF973CEA4C72F1 /* Pods_CustomExpandableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomExpandableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25B367353F3FED2346AC756 /* Pods-CustomExpandableCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomExpandableCell.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomExpandableCell/Pods-CustomExpandableCell.release.xcconfig"; sourceTree = "<group>"; };
 		F3BEB2F020C57DAA00951AA4 /* CustomUISwipeGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUISwipeGestureRecognizer.swift; sourceTree = "<group>"; };
+		F3BEB2F220C58DC000951AA4 /* MuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButton.swift; sourceTree = "<group>"; };
 		F3F05B6D20C161FC000A1DCF /* CustomExpandableCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomExpandableCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F05B7020C161FC000A1DCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3F05B7220C161FC000A1DCF /* ExpandableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				F3F05B9720C17C9B000A1DCF /* UIImage.swift */,
 				F3F05B9620C17C9B000A1DCF /* UINavigationItem.swift */,
 				F3BEB2F020C57DAA00951AA4 /* CustomUISwipeGestureRecognizer.swift */,
+				F3BEB2F220C58DC000951AA4 /* MuteButton.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BEB2F320C58DC000951AA4 /* MuteButton.swift in Sources */,
 				F3F05B9A20C17C9B000A1DCF /* CAShapeLayer.swift in Sources */,
 				F3F05B8420C177A5000A1DCF /* expandedTableViewCell.swift in Sources */,
 				F3F05BB920C1813E000A1DCF /* StubGroupAlarmModel.swift in Sources */,
