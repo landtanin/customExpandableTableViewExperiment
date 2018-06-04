@@ -121,6 +121,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.92527258400000001" green="0.92941254380000005" blue="0.93342864510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CeU-a9-KAx" firstAttribute="leading" secondItem="X13-W3-mzV" secondAttribute="leading" constant="14" id="mNJ-AG-TaO"/>
+            </constraints>
             <connections>
                 <outlet property="alarmGroupAlarmInfoLbl" destination="4Jf-4G-FFJ" id="fcr-zU-lNY"/>
                 <outlet property="alarmGroupAlarmNoLbl" destination="4cL-cY-hz1" id="j3r-HL-TA9"/>
