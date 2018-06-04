@@ -33,6 +33,8 @@ extension UIColor{
             
             static let Green = UIColor(hexString: "66BD45")
             static let Blue = UIColor(hexString: "00B0D4")
+            static let GrayBG = UIColor(hexString: "EFF0F1")
+            static let MuteBtnWhite = UIColor(hexString: "FEFEFE")
             
         }
         

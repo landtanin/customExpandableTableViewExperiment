@@ -122,19 +122,25 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
 //        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(recognizer:)))
 //        headerView.addGestureRecognizer(panGesture)
         
-        let buttonWidth: CGFloat = 140
-        let buttonHeight: CGFloat = 122
-        let button = UIButton(frame: CGRect(x: headerView.frame.origin.x - 140, y: headerView.frame.origin.y, width: buttonWidth, height: buttonHeight))
+        let bgViewWidth: CGFloat = 145
+        let bgViewHeight: CGFloat = 122
+        let muteBtnBGView = UIView(frame: CGRect(x: headerView.frame.origin.x - 145, y: headerView.frame.origin.y, width: bgViewWidth, height: bgViewHeight))
+        muteBtnBGView.backgroundColor = UIColor.HomeScreen.Swipe.GrayBG
+        
+        let buttonWidth: CGFloat = 130
+        let buttonHeight: CGFloat = 107 // (bgHeight - 15)
+        let button = UIButton(frame: CGRect(x: headerView.frame.origin.x - 130, y: headerView.frame.origin.y + 10, width: buttonWidth, height: buttonHeight))
         button.layer.cornerRadius = 10
-        button.backgroundColor = UIColor.HomeScreen.Status.Red!
-        button.setTitle("Mute", for: .normal)
-        //        button.titleLabel?.font = UIFont(name: "SFUIDisplay-Bold", size: 14)
+        button.backgroundColor = UIColor.HomeScreen.Swipe.MuteBtnWhite
+        let muteIcon = Utils.resizeImage(image: UIImage(named: "mute_icon")!, targetSize: CGSize(width: 30.0, height: 30.0))
+        button.setImage(muteIcon, for: .normal)
         button.addTarget(self, action: #selector(self.newDataAvailableBtnTapped), for: .touchUpInside)
 //        button.layer.shadowRadius = 2
 //        button.layer.shadowColor = UIColor.black.cgColor
 //        button.layer.shadowOffset = CGSize(width: 2, height: 2)
 //        button.layer.shadowOpacity = 0.3
         
+        headerView.addSubview(muteBtnBGView)
         headerView.addSubview(button)
         headerView.clipsToBounds = false
         
@@ -164,7 +170,7 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         if (sender.direction == .left && headerCell.frame.origin.x != 0) {
 
             print("Swipe Left")
-            let labelPosition = CGPoint(x: headerCell.frame.origin.x - 140.0, y: headerCell.frame.origin.y)
+            let labelPosition = CGPoint(x: headerCell.frame.origin.x - 145.0, y: headerCell.frame.origin.y)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
                 
                 headerCell.frame = CGRect(x: labelPosition.x, y: labelPosition.y, width: headerCell.frame.size.width, height: headerCell.frame.size.height)
@@ -175,7 +181,7 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
 
         if (sender.direction == .right && headerCell.frame.origin.x == 0) {
             print("Swipe Right")
-            let labelPosition = CGPoint(x: headerCell.frame.origin.x + 140.0, y: headerCell.frame.origin.y)
+            let labelPosition = CGPoint(x: headerCell.frame.origin.x + 145.0, y: headerCell.frame.origin.y)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
                 
                 headerCell.frame = CGRect(x: labelPosition.x, y: labelPosition.y, width: headerCell.frame.size.width, height: headerCell.frame.size.height)
