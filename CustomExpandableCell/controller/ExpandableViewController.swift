@@ -84,6 +84,7 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         headerView.alarmGroupNameLbl.text = headerTitles[section]
         headerView.alarmGroupTimeLbl.text = "Time lbl works"
+        headerView.sectionNumber = section
 //        headerView.expandableCellCellDelegate = self
         headerView.backgroundColor = UIColor.blue
         
@@ -92,8 +93,9 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         let tapgesture = UITapGestureRecognizer(target: self , action: #selector(self.sectionTapped(_:)))
         headerView.addGestureRecognizer(tapgesture)
         
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
+//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let leftSwipe = CustomUISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)), sectionNumber: section)
+        let rightSwipe = CustomUISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)), sectionNumber: section)
         
 //        leftSwipe.setValue(section, forKey: "sectionKey")
 //        rightSwipe.setValue(section, forKey: "sectionKey")
@@ -109,6 +111,7 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         
 //        leftSwipe.setValue(section, forKeyPath: "sectionKey")
 //        rightSwipe.setValue(section, forKeyPath: "sectionKey")
+        
         
         leftSwipe.direction = .left
         rightSwipe.direction = .right
@@ -148,10 +151,10 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         recognizer.setTranslation(CGPoint.zero, in: self.view)
     }
     
-    @objc func handleSwipes(sender:UISwipeGestureRecognizer) {
+    @objc func handleSwipes(_ sender:CustomUISwipeGestureRecognizer) {
         
-//        let sectionNum = sender.value(forKey: "sectionKey") as! Int
-        let headerCell = expandTable.headerView(forSection: 0)!
+        let sectionNum = sender.sectionNumber
+        let headerCell = expandTable.headerView(forSection: sectionNum)!
         
 //        self.expandTable.beginUpdates()
 //        self.expandTable.deleteSections([0], with: .right)

@@ -35,7 +35,7 @@ class ExpandableCellCell: UITableViewHeaderFooterView {
 //    public var expandableCellCellDelegate:ExpandableCellNavBtnDelegator!
     static let ID = "ExpandableCell"
     
-    var sectionNumber: Int!  // you don't have to do this, but it can be useful to have reference back to the section number so that when you tap on a button, you know which section you came from
+    var sectionNumber: Int = 0  // you don't have to do this, but it can be useful to have reference back to the section number so that when you tap on a button, you know which section you came from
 
     
     override func awakeFromNib() {
