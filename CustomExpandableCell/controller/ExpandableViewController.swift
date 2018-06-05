@@ -83,28 +83,14 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         button.setImage(muteIcon, for: .normal)
         button.addTarget(self, action: #selector(muteBtnTapped(_:)), for: .touchUpInside)
         
-//        button.layer.shadowRadius = 2
-//        button.layer.shadowColor = UIColor.black.cgColor
-//        button.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        button.layer.shadowOpacity = 0.3
-//        headerView.isUserInteractionEnabled = true
+        button.layer.shadowRadius = 2
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+        button.layer.shadowOpacity = 0.06
+
         headerView.clipsToBounds = false
         headerView.addSubview(button)
-//        headerView.contentView.isUserInteractionEnabled = false
-        headerView.contentView.clipsToBounds = false
-        headerView.bringSubview(toFront: button)
-//        headerView.subviews[0].isUserInteractionEnabled = false
-//        headerView.subviews[1].isUserInteractionEnabled = false
-//        headerView.subviews[2].layer.zPosition = 3;
-        
-//        headerView.isUserInteractionEnabled = true
-//        headerView.bringSubview(toFront: button)
-//        print("headerView.subviews.count = \(headerView.subviews.count)")
-//        print("headerView.subviews[0] = \(headerView.subviews[0])")
-//        print("headerView.subviews[1] = \(headerView.subviews[1])")
-//        print("headerView.subviews[2] = \(headerView.subviews[2])")
-        
-        
+
         let tapgesture = UITapGestureRecognizer(target: self , action: #selector(self.sectionTapped(_:)))
         headerView.addGestureRecognizer(tapgesture)
         
