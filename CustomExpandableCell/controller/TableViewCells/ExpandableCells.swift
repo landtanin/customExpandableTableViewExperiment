@@ -88,6 +88,19 @@ class ExpandableCellCell: UITableViewHeaderFooterView {
 //        }
 //
 //    }
+ 
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        
+        for muteBtn in self.subviews {
+            if muteBtn is MuteButton {
+                if muteBtn.point(inside: convert(point, to: muteBtn), with: event) {
+                    return true
+                }
+            }
+        }
+        
+        return super.point(inside: point, with: event)
+    }
     
 }
 

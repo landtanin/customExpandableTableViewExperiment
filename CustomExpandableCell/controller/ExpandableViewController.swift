@@ -70,8 +70,40 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         headerView.alarmGroupTimeLbl.text = "Time lbl works"
         headerView.sectionNumber = section
         headerView.backgroundColor = UIColor.blue
+        headerView.backgroundView?.backgroundColor = UIColor.green
         
         headerView.tag = section + 100
+        
+        let buttonWidth: CGFloat = bgViewWidth - 15
+        let buttonHeight: CGFloat = bgViewHeight - 15
+        let button = MuteButton(frame: CGRect(x: headerView.frame.origin.x - buttonWidth, y: headerView.frame.origin.y + 10, width: buttonWidth, height: buttonHeight), groupId: String(section))
+        button.layer.cornerRadius = 10
+        button.backgroundColor = UIColor.HomeScreen.Swipe.MuteBtnWhite
+        let muteIcon = Utils.resizeImage(image: UIImage(named: "mute_icon")!, targetSize: CGSize(width: 30.0, height: 30.0))
+        button.setImage(muteIcon, for: .normal)
+        button.addTarget(self, action: #selector(muteBtnTapped(_:)), for: .touchUpInside)
+        
+//        button.layer.shadowRadius = 2
+//        button.layer.shadowColor = UIColor.black.cgColor
+//        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        button.layer.shadowOpacity = 0.3
+//        headerView.isUserInteractionEnabled = true
+        headerView.clipsToBounds = false
+        headerView.addSubview(button)
+//        headerView.contentView.isUserInteractionEnabled = false
+        headerView.contentView.clipsToBounds = false
+        headerView.bringSubview(toFront: button)
+//        headerView.subviews[0].isUserInteractionEnabled = false
+//        headerView.subviews[1].isUserInteractionEnabled = false
+//        headerView.subviews[2].layer.zPosition = 3;
+        
+//        headerView.isUserInteractionEnabled = true
+//        headerView.bringSubview(toFront: button)
+//        print("headerView.subviews.count = \(headerView.subviews.count)")
+//        print("headerView.subviews[0] = \(headerView.subviews[0])")
+//        print("headerView.subviews[1] = \(headerView.subviews[1])")
+//        print("headerView.subviews[2] = \(headerView.subviews[2])")
+        
         
         let tapgesture = UITapGestureRecognizer(target: self , action: #selector(self.sectionTapped(_:)))
         headerView.addGestureRecognizer(tapgesture)
@@ -84,33 +116,6 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         headerView.addGestureRecognizer(leftSwipe)
         headerView.addGestureRecognizer(rightSwipe)
-        
-        let buttonWidth: CGFloat = bgViewWidth - 15
-        let buttonHeight: CGFloat = bgViewHeight - 15
-        let button = UIButton(frame: CGRect(x: headerView.frame.origin.x - buttonWidth, y: headerView.frame.origin.y + 10, width: buttonWidth, height: buttonHeight))
-        button.layer.cornerRadius = 10
-        button.backgroundColor = UIColor.HomeScreen.Swipe.MuteBtnWhite
-        let muteIcon = Utils.resizeImage(image: UIImage(named: "mute_icon")!, targetSize: CGSize(width: 30.0, height: 30.0))
-        
-        button.setImage(muteIcon, for: .normal)
-        button.addTarget(self, action: #selector(muteBtnTapped(_:)), for: .touchUpInside)
-        
-//        button.layer.shadowRadius = 2
-//        button.layer.shadowColor = UIColor.black.cgColor
-//        button.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        button.layer.shadowOpacity = 0.3
-        headerView.isUserInteractionEnabled = true
-        headerView.clipsToBounds = false
-        headerView.addSubview(button)
-        headerView.subviews[0].isUserInteractionEnabled = false
-        headerView.subviews[1].isUserInteractionEnabled = false
-        headerView.subviews[2].isUserInteractionEnabled = true
-//        headerView.isUserInteractionEnabled = true
-//        headerView.bringSubview(toFront: button)
-        print("headerView.subviews.count = \(headerView.subviews.count)")
-        print("headerView.subviews[0] = \(headerView.subviews[0])")
-        print("headerView.subviews[1] = \(headerView.subviews[1])")
-        print("headerView.subviews[2] = \(headerView.subviews[2])")
         
         return headerView
 
@@ -163,8 +168,8 @@ class ExpandableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     // MARK: Action methods
-    @objc func muteBtnTapped(_ sender: UIButton!) {
-        print("mute btn tapped :")
+    @objc func muteBtnTapped(_ sender: MuteButton!) {
+        print("mute btn tapped : \(sender.groupId)")
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
